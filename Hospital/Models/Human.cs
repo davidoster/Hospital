@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Hospital.Models
 {
-    abstract class Human
+    abstract class Human: IHuman
     {
         private int _Id;
 
@@ -75,5 +75,11 @@ namespace Hospital.Models
         {
             return base.GetHashCode();
         }
+
+        public abstract void Talks();
+
+        public abstract void Sleeps();
+
+        public abstract void Runs();
     }
 }

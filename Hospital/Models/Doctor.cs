@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Hospital.Models
 {
-    class Doctor: Human
+    class Doctor: Human, IDoctor
     {
         //[Key]
         private string _specialty;
@@ -26,6 +26,46 @@ namespace Hospital.Models
             base(firstName, lastName, mobileTelephone, email)
         {
             this.Specialty = specialty;
+        }
+
+        public override string ToString()
+        {
+            return base.ToString() + $" {Specialty}";
+        }
+
+        public override bool Equals(object obj)
+        {
+            return base.Equals(obj);
+        }
+
+        public override int GetHashCode()
+        {
+            return base.GetHashCode();
+        }
+
+        public override void Talks()
+        {
+            throw new NotImplementedException();
+        }
+
+        public override void Sleeps()
+        {
+            throw new NotImplementedException();
+        }
+
+        public override void Runs()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Examines()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Operates()
+        {
+            throw new NotImplementedException();
         }
     }
 }
